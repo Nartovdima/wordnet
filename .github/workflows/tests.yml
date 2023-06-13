@@ -30,20 +30,17 @@ jobs:
       run: mkdir build && cmake -S. -Bbuild -DUSE_CLANG_TIDY=TRUE -DTESTS_BUILD_TYPE=NONE -DCMAKE_BUILD_TYPE=Release && cmake --build build
     - name: Run default tests
       timeout-minutes: 10
-      working-directory: ./build/libraries/wordnet
-      run: ./tests
+      run: ./build/libraries/wordnet/tests
 
     - name: Build ASAN
       run: mkdir build_ASAN && cmake -S. -Bbuild_ASAN -DTESTS_BUILD_TYPE=ASAN -DCMAKE_BUILD_TYPE=Debug && cmake --build build_ASAN
     - name: Run ASAN tests
       timeout-minutes: 15
-      working-directory: ./build_ASAN/libraries/wordnet
-      run: ./tests
+      run: ./build_ASAN/libraries/wordnet/tests
 
     - name: Build USAN
       run: mkdir build_USAN && cmake -S. -Bbuild_USAN -DTESTS_BUILD_TYPE=USAN -DCMAKE_BUILD_TYPE=Debug && cmake --build build_USAN
     - name: Run USAN tests
-      timeout-minutes: 10
-      working-directory: ./build_USAN/libraries/wordnet
-      run: ./tests
+      timeout-minutes: 10 
+      run: ./build_USAN/libraries/wordnet/tests
 
