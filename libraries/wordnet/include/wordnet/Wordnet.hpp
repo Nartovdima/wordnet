@@ -116,17 +116,6 @@ public:
                 return tmp;
             }
 
-            iterator& operator--() {
-                --it;
-                return *this;
-            }
-
-            iterator operator--(int) {
-                auto tmp = *this;
-                --*this;
-                return tmp;
-            }
-
             friend bool operator==(const iterator& left, const iterator& right) { return left.it == right.it; }
 
             friend bool operator!=(const iterator& left, const iterator& right) { return !(left == right); }

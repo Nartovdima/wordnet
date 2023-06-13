@@ -52,7 +52,7 @@ WordNet::WordNet(std::istream& synsets, std::istream& hypernyms) {
         getline(synsets, synset_gloss[id]);
     }
 
-    sca_solver = ShortestCommonAncestor::ShortestCommonAncestor(Digraph(hypernyms, shrinked_id));
+    sca_solver = ShortestCommonAncestor(Digraph(hypernyms, shrinked_id));
 }
 
 WordNet::Nouns::iterator WordNet::Nouns::begin() const {
