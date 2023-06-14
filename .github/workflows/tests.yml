@@ -37,13 +37,12 @@ jobs:
       run: mkdir build_ASAN && cmake -S. -Bbuild_ASAN -DTESTS_BUILD_TYPE=ASAN -DCMAKE_BUILD_TYPE=Debug && cmake --build build_ASAN
     - name: Run ASAN tests
       timeout-minutes: 15
-      working-directory: ./build/libraries/wordnet
+      working-directory: ./build_ASAN/libraries/wordnet
       run: ./tests
 
     - name: Build USAN
       run: mkdir build_USAN && cmake -S. -Bbuild_USAN -DTESTS_BUILD_TYPE=USAN -DCMAKE_BUILD_TYPE=Debug && cmake --build build_USAN
     - name: Run USAN tests
-      timeout-minutes: 10 
-      working-directory: ./build/libraries/wordnet
+      timeout-minutes: 10
+      working-directory: ./build_USAN/libraries/wordnet
       run: ./tests
-
