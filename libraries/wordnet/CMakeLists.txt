@@ -21,7 +21,7 @@ file(GLOB ETC_FILES RELATIVE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/etc/*)
 # Copy data files for tests
 add_custom_command(
     OUTPUT ${ETC_FILES}
-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/etc ${CMAKE_CURRENT_BINARY_DIR}/tests/etc
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/etc ${CMAKE_CURRENT_BINARY_DIR}/tests_sources/etc
     DEPENDS ${ETC_FILES}
     COMMENT "Copying test data")
 
