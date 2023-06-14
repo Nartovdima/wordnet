@@ -12,7 +12,7 @@ enable_testing()
 find_package(GTest REQUIRED)
 include(GoogleTest)
 
-add_executable(tests tests/test_iterator.hpp tests/test.cpp)
+add_executable(tests tests_sources/test_iterator.hpp tests_sources/test.cpp)
 target_link_libraries(tests PRIVATE GTest::GTest wordnet::wordnet)
 gtest_discover_tests(tests)
 
