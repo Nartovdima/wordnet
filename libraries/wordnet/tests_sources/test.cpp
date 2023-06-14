@@ -13,7 +13,7 @@ namespace {
 class WordNetTest: public ::testing::Test {
 protected:
     static void SetUpTestSuite() {
-        std::ifstream synsets{"tests/etc/synsets.txt"}, hypernyms{"tests/etc/hypernyms.txt"};
+        std::ifstream synsets{"tests_sources/etc/synsets.txt"}, hypernyms{"tests_sources/etc/hypernyms.txt"};
         ASSERT_TRUE(synsets);
         ASSERT_TRUE(hypernyms);
 
