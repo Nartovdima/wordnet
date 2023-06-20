@@ -46,4 +46,3 @@ jobs:
       timeout-minutes: 10
       working-directory: ./build_USAN/libraries/wordnet
       run: ./tests
-

@@ -12,7 +12,7 @@ enable_testing()
 find_package(GTest REQUIRED)
 include(GoogleTest)
 
-add_executable(tests tests/test_iterator.hpp tests/test.cpp)
+add_executable(tests tests_sources/test_iterator.hpp tests_sources/test.cpp)
 target_link_libraries(tests PRIVATE GTest::GTest wordnet::wordnet)
 gtest_discover_tests(tests)
 
@@ -21,7 +21,7 @@ file(GLOB ETC_FILES RELATIVE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/etc/*)
 # Copy data files for tests
 add_custom_command(
     OUTPUT ${ETC_FILES}
-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/etc ${CMAKE_CURRENT_BINARY_DIR}/tests/etc
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/etc ${CMAKE_CURRENT_BINARY_DIR}/tests_sources/etc
     DEPENDS ${ETC_FILES}
     COMMENT "Copying test data")
 
